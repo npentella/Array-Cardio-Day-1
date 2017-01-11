@@ -60,7 +60,6 @@ console.log(inventors);
 // 4. How many years did all the inventors live?
 
 function yearsLived(inventor) {
-  console.log(inventor.passed - inventor.year);
   return inventor.passed - inventor.year;
 }
 
@@ -84,10 +83,28 @@ console.log(sortedInventors);
 // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
 // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
+// Done in console
 
 // 7. sort Exercise
 // Sort the people alphabetically by last name
 
+console.log(people);
+people.sort();
+console.log(people);
+
 // 8. Reduce Exercise
 // Sum up the instances of each of these
 const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+
+function countInstances(object, word) {
+  if (object[word]) {
+    object[word] += 1;
+  } else {
+    object[word] = 1;
+  }
+  return object;
+}
+
+wordCounts = data.reduce(countInstances, {});
+
+console.log(wordCounts);
