@@ -88,8 +88,18 @@ console.log(sortedInventors);
 // 7. sort Exercise
 // Sort the people alphabetically by last name
 
-console.log(people);
-people.sort();
+function getFirstName(name) {
+  return name.split(", ")[1];
+}
+
+function compareByName(name1, name2) {
+  if (getFirstName(name1) > getFirstName(name2)) {
+    return 1;
+  } else {
+    return -1;
+  }
+}
+people.sort(compareByName);
 console.log(people);
 
 // 8. Reduce Exercise
